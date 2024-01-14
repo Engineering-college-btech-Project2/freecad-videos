@@ -107,7 +107,7 @@
         flickerIntensity = 1 + Math.sin(Date.now() / 300) * 0.2; // Adjust frequency and intensity as needed
         welcomeHeading.style.opacity = flickerIntensity;
 
-        requestAnimationFrame(updateFlicker);
+        setTimeout(updateFlicker, 30);
     }
 
     updateFlicker(); // Call the function to start the flickering
