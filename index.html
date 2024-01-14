@@ -102,15 +102,16 @@
 
       let flickerIntensity = 1;
 
-        function updateFlicker() {
-            const welcomeHeading = document.getElementById('welcome-heading');
-            flickerIntensity = 1 + Math.sin(Date.now() / 300) * 0.2; // Adjust frequency and intensity as needed
-            welcomeHeading.style.opacity = flickerIntensity;
+    function updateFlicker() {
+        const welcomeHeading = document.getElementById('welcome-heading');
+        flickerIntensity = 1 + Math.sin(Date.now() / 300) * 0.2; // Adjust frequency and intensity as needed
+        welcomeHeading.style.opacity = flickerIntensity;
 
-            requestAnimationFrame(updateFlicker);
-        }
+        requestAnimationFrame(updateFlicker);
+    }
 
-        updateFlicker();
+    updateFlicker(); // Call the function to start the flickering
+    updateLoading(); // Call the existing loading function
     </script>
 </body>
 </html>
