@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Function to redirect to another page
         function redirectToAnotherPage() {
-            window.location.href = '404.html';
+            window.location.href = 'bLuEjAgUaR5uEaN5S.html';
         }
 
         // Check if the user is on a desktop and redirect if true
