@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Loading Page</title>
     <style>
     body {
@@ -100,18 +100,12 @@
         updateLoading();
 
 
-      let flickerIntensity = 1;
+      function updateFlicker() {
+    const welcomeHeading = document.getElementById('welcome-heading');
+    welcomeHeading.style.opacity = 1; // Set opacity to a constant value
 
-    function updateFlicker() {
-        const welcomeHeading = document.getElementById('welcome-heading');
-        flickerIntensity = 1 + Math.sin(Date.now() / 300) * 0.2; // Adjust frequency and intensity as needed
-        welcomeHeading.style.opacity = flickerIntensity;
-
-        setTimeout(updateFlicker, 30);
-    }
-
-    updateFlicker(); // Call the function to start the flickering
-    updateLoading(); // Call the existing loading function
+    // Remove the setTimeout call to stop the flickering
+      }
     </script>
 </body>
 </html>
