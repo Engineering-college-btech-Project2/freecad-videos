@@ -76,36 +76,37 @@
         </div>
     </div>
 
-    <script>
-        let progress = 0;
+   <script>
+    let progress = 0;
 
-        function updateLoading() {
-            const loadingBar = document.getElementById('loading-bar');
-            loadingBar.style.width = `${progress}%`;
+    function updateLoading() {
+        const loadingBar = document.getElementById('loading-bar');
+        loadingBar.style.width = `${progress}%`;
 
-            if (progress < 100) {
-                progress++;
-                setTimeout(updateLoading, 30);
-            } else {
-                // Redirect based on device type
-                const isDesktop = window.innerWidth > 600; // Adjust the breakpoint as needed
-                const redirectPage = isDesktop ? '404.html' : '../fUnKy4mOnKeYpIzZa/hApPy9sUnFlOwErYrS.html';
+        if (progress < 100) {
+            progress++;
+            setTimeout(updateLoading, 10); // Change the delay to 10 milliseconds
+        } else {
+            // Redirect based on device type
+            const isDesktop = window.innerWidth > 600; // Adjust the breakpoint as needed
+            const redirectPage = isDesktop ? '404.html' : '../fUnKy4mOnKeYpIzZa/hApPy9sUnFlOwErYrS.html';
 
-                setTimeout(() => {
-                    window.location.href = redirectPage;
-                }, 1500); // Redirect after 1.5 seconds
-            }
+            setTimeout(() => {
+                window.location.href = redirectPage;
+            }, 1000); // Redirect after 1 second
         }
+    }
 
-        updateLoading();
+    updateLoading();
 
+    function updateFlicker() {
+        const welcomeHeading = document.getElementById('welcome-heading');
+        welcomeHeading.style.opacity = 1; // Set opacity to a constant value
 
-      function updateFlicker() {
-    const welcomeHeading = document.getElementById('welcome-heading');
-    welcomeHeading.style.opacity = 1; // Set opacity to a constant value
+        // Remove the setTimeout call to stop the flickering
+    }
+</script>
 
-    // Remove the setTimeout call to stop the flickering
-      }
-    </script>
+        
 </body>
 </html>
