@@ -192,57 +192,46 @@
     <script src="https://kit.fontawesome.com/your-font-awesome-kit-code.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <script>
+        
         function isMobile() {
-  return window.innerWidth <= 768;
+    return window.innerWidth <= 768;
 }
 
-window.addEventListener('DOMContentLoaded', function() {
-  if (isMobile()) {
-    // Blur the page
-    document.body.style.filter = "blur(25px)";
-    document.body.style.pointerEvents = "none";
+window.addEventListener('DOMContentLoaded', function () {
+    if (isMobile()) {
+        // Blur the page
+        document.body.style.filter = "blur(25px)";
+        document.body.style.pointerEvents = "none";
 
-    // Generate password based on the current date
-    var currentDate = new Date();
-    var passwordDay = currentDate.getDate();
-    var password = "akashdip100" + passwordDay + "exam";
+        // Generate password based on the current date
+        var currentDate = new Date();
+        var passwordDay = currentDate.getDate();
+        var password = "akashdip100" + passwordDay + "exam";
 
-    // Ask for password
-    var enteredPassword = prompt("Please enter the password:");
+        // Ask for password
+        var enteredPassword = prompt("Please enter the password:");
 
-    // Check password
-    if (enteredPassword !== password) {
-      // Redirect to 404.html on wrong password
-      window.location.href = "404.html";
-    } else {
-      // Remove blur and pointer events on correct password
-      document.body.style.filter = "";
-      document.body.style.pointerEvents = "";
-    }
-  }
-});
-        
-
-        
-       // Function to check if the user is on a desktop device
-        function isDesktop() {
-            return window.innerWidth > 768; // Adjust the width based on your design
+        // Check password
+        if (enteredPassword !== password) {
+            // Redirect to 404.html on wrong password
+            window.location.href = "404.html";
+        } else {
+            // Remove blur and pointer events on correct password
+            document.body.style.filter = "";
+            document.body.style.pointerEvents = "";
         }
+    }
+});
 
-        // Check if the user is on a desktop and apply backdrop blur with increased intensity if true
-        window.addEventListener('DOMContentLoaded', function () {
-            if (isDesktop()) {
-                document.body.style.filter = "blur(25px)"; // Increase the blur intensity by adjusting the value (e.g., 10px)
-                document.body.style.pointerEvents = "none"; // Disable pointer events on the body
+// Intercept requests
+window.addEventListener('beforeunload', function (e) {
+    // Prevent showing the URL when leaving the page
+    e.returnValue = null;
+});
 
-                // Enable pointer events on the Subscribe button
-                var subscribeButton = document.querySelector('.Action-button a');
-                if (subscribeButton) {
-                    subscribeButton.style.pointerEvents = "auto";
-                }
-            }
-        });
 
+        
+       
 
         // popup message
           window.onload = function() {
