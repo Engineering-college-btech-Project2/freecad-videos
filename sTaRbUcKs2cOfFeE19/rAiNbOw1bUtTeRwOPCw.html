@@ -105,20 +105,20 @@
     }
 
     .slider-container {
-      position: relative;
-      overflow: hidden;
-      max-width: 100%;
-    }
+    max-width: 80%; /* Adjust the maximum width of the slider container */
+    margin: 0 auto; /* Center the slider on the page */
+  }
 
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
+  .slider {
+    width: 100%; /* Take up the full width of the slider container */
+  }
 
-    .slide {
-      flex: 0 0 100%;
-      text-align: center;
-    }
+  .slide {
+    flex: 0 0 25%; /* Display four slides in a row for a 15-inch desktop screen */
+    box-sizing: border-box;
+    padding: 0 10px; /* Add padding between slides for better spacing */
+    text-align: center;
+  }
 
     .slide img {
       max-width: 100%;
