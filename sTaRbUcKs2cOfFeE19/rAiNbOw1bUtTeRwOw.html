@@ -254,42 +254,39 @@ nav a.glow {
   
 <script>
 // Function to check if the user is on a desktop device
-        function isDesktop() {
-            return window.innerWidth > 768; // Adjust the width based on your design
-        }
+function isDesktop() {
+    return window.innerWidth > 768; // Adjust the width based on your design
+}
 
-        // Function to redirect to another page
-        function redirectToAnotherPage() {
-            window.location.href = 'rAiNbOw1bUtTeRwOPCw.html';
-        }
+// Function to redirect to another page
+function redirectToAnotherPage() {
+    window.location.href = 'rAiNbOw1bUtTeRwOPCw.html';
+}
 
-        // Check if the user is on a desktop and redirect if true
-        window.addEventListener('DOMContentLoaded', function () {
-            if (isDesktop()) {
-                redirectToAnotherPage();
-            }
-        });
-     
-
-      // Function to disable right-click context menu
-        function disableRightClick(event) {
-            event.preventDefault();
-        }
-
-        // Attach the disableRightClick function to the contextmenu event
-        window.addEventListener('contextmenu', disableRightClick);
+// Check if the user is on a desktop and redirect if true
+window.addEventListener('DOMContentLoaded', function () {
+    if (isDesktop()) {
+        redirectToAnotherPage();
+    }
 });
 
+// Function to disable right-click context menu
+function disableRightClick(event) {
+    event.preventDefault();
+}
 
-  
-  // popup message for - when open
-    window.onload = function() {
-            if (window.innerWidth <= 768) { // Adjust the width as needed
-                setTimeout(function() {
-                    alert('Hi\ni am Akashdip Mahapatra\ni love Physics\nfrom Mechanical Engineering\n3rd year © 2024\n\nযদি এই browser বার বার 404 error দেখায় - try another browser from play-store like Brave');
-                }, 5000); // 5000 milliseconds = 5 seconds
-            }
-        };
+// Attach the disableRightClick function to the contextmenu event
+window.addEventListener('contextmenu', disableRightClick);
+
+// popup message for - when open
+window.onload = function () {
+    if (window.innerWidth <= 768) { // Adjust the width as needed
+        setTimeout(function () {
+            alert('Hi\nI am Akashdip Mahapatra\nI love Physics\nFrom Mechanical Engineering\n3rd year © 2024\n\nযদি এই browser বার বার 404 error দেখায় - try another browser from play-store like Brave');
+        }, 5000); // 5000 milliseconds = 5 seconds
+    }
+};
+
 </script>
   
   
