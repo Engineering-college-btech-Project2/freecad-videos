@@ -107,30 +107,6 @@
       }
     }
 
-    .slider-container {
-    max-width: 80%; /* Adjust the maximum width of the slider container */
-    margin: 0 auto; /* Center the slider on the page */
-  }
-
-  .slider {
-    width: 100%; /* Take up the full width of the slider container */
-  }
-
-  .slide {
-    flex: 0 0 25%; /* Display four slides in a row for a 15-inch desktop screen */
-    box-sizing: border-box;
-    padding: 0 10px; /* Add padding between slides for better spacing */
-    text-align: center;
-  }
-
-    .slide img {
-      max-width: 100%;
-    }
-
-    .caption {
-      margin-top: 10px;
-      font-size: 18px;
-    }
 
     .indicators {
       display: flex;
@@ -147,27 +123,61 @@
       cursor: pointer;
     }
 
-    .controls {
-      text-align: center;
-      margin-top: 10px;
-    }
 
-    .active {
-      background-color: #333;
-    }
+    /* Styles for the image slider */
+.slider-container {
+  max-width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
-    .prev, .next {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      font-size: 18px;
-    }
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .prev {
-      margin-right: 10px;
-    }
+.slide {
+  flex: 0 0 33.33%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.slide img {
+  max-width: 100%;
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.controls {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.prev,
+.next {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.active {
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .slide {
+    flex: 0 0 100%;
+  }
+}
+
+    
 
     .navy-button {
       background-color: #870b32 !important;
@@ -241,25 +251,25 @@
         <!-- Video Card 2 -->
         <div class="video-card1">
           <iframe src="https://www.youtube.com/embed/28ddgcVzOTw?autoplay=1" frameborder="0" allowfullscreen></iframe>
-          <h3>&nbspCMD Coding</h3>
+          <h3>&nbspCloud Computing</h3>
           <p></p>
         </div>
         <!-- Video Card 2 -->
         <div class="video-card1">
           <iframe src="https://www.youtube.com/embed/py_eK8z48g8?autoplay=1" frameborder="0" allowfullscreen></iframe>
-          <h3>&nbspCMD Coding</h3>
+          <h3>&nbspcreat your own local server</h3>
           <p></p>
         </div>
         <!-- Video Card 2 -->
         <div class="video-card1">
           <iframe src="https://www.youtube.com/embed/G0vi2nZp75o?autoplay=1" frameborder="0" allowfullscreen></iframe>
-          <h3>&nbspCMD Coding</h3>
+          <h3>&nbsperror</h3>
           <p></p>
         </div>
         <!-- Video Card 2 -->
         <div class="video-card1">
           <iframe src="https://www.youtube.com/embed/JHugCa7PBYM?autoplay=1" frameborder="0" allowfullscreen></iframe>
-          <h3>&nbspCMD Coding</h3>
+          <h3>&nbspiOT</h3>
           <p></p>
         </div>
         <!-- Repeat for other videos -->
@@ -268,69 +278,133 @@
 
     <!-- Additional sections go here -->
 
-    <!-- Image Slider -->
-    <div class="slider-container">
-      <div class="slider">
-        <!-- Slide 1 -->
-        <div class="slide">
-          <a href="https://youtu.be/py_eK8z48g8">
-          <img src="img/2-01.jpeg" alt="Slider Image 1"></a>
-          <p class="caption">Create Your Own Server</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        V
-        <!-- Slide 2 -->
-        <div class="slide">
-          <img src="slider-image2.jpg" alt="Slider Image 2">
-          <p class="caption">Caption for Image 2</p>
-        </div>
-        <!-- Add more slides as needed -->
-      </div>
+   <!-- Image Slider -->
+<div class="slider-container">
+  <div class="slider">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <a href="https://youtu.be/py_eK8z48g8">
+        <img src="img/2-01.jpeg" alt="Create Your Own Server">
+      </a>
+      <p class="caption">Create Your Own Server</p>
     </div>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <a href="https://youtu.be/uk5VGfzw8IU">
+        <img src="img/1-01.jpeg" alt="Wifi Hacking in Kali Linux">
+      </a>
+      <p class="caption">Wifi Hacking in Kali Linux</p>
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p-5UwLqFBFtat90L8IOc1bZ">
+        <img src="img/3-01.jpeg" alt="DIY Wifi RC Car">
+      </a>
+      <p class="caption">DIY Wifi RC Car</p>
+    </div>
+    <!-- Slide 4 -->
+    <div class="slide">
+      <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p__J3GSHkKfLjC08q0NmWtR">
+        <img src="img/4-01.jpeg" alt="IC Engine in SolidWorks">
+      </a>
+      <p class="caption">IC Engine in SolidWorks</p>
+    </div>
+    <!-- Slide 5 -->
+    <div class="slide">
+      <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p-rR-kDstljCglAQ4li-RGZ">
+        <img src="img/5-01.jpeg" alt="SolidWorks PlayList">
+      </a>
+      <p class="caption">SolidWorks PlayList</p>
+    </div>
+    <!-- Slide 6 -->
+    <div class="slide">
+      <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p90o-aY6pJXUS7FnzC2sVrk">
+        <img src="img/6-01.jpeg" alt="Stairs in SolidWorks">
+      </a>
+      <p class="caption">Stairs in SolidWorks</p>
+    </div>
+    <!-- Slide 7 -->
+    <div class="slide">
+      <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p9D9Mw3hr-uLOXioiFdPDGd">
+        <img src="img/7-01.jpeg" alt="autocad 2d playlist">
+      </a>
+      <p class="caption">autocad 2D</p>
+    </div>
+    <!-- Slide 8 -->
+    <div class="slide">
+      <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p9NEuljRr7hNsFiPASnJYQt">
+        <img src="img/8-01.jpeg" alt="autocad 3d playlist">
+      </a>
+      <p class="caption">autocad 3D</p>
+    </div>
+    <!-- Slide 9 -->
+    <div class="slide">
+      <a href="#">
+        <img src="img/9-01.jpeg" alt="Manufacturing lab AOT college">
+      </a>
+      <p class="caption">Manufacturing lab</p>
+    </div>
+    <!-- Slide 10 -->
+    <div class="slide">
+      <a href="#">
+        <img src="img/10-01.jpeg" alt="Machine Drawing And Design">
+      </a>
+      <p class="caption">Machine Drawing And Design</p>
+    </div>
+    <!-- Slide 11 -->
+    <div class="slide">
+      <a href="#">
+        <img src="img/11-01.jpeg" alt="Meteorology & Manufacturing process lab">
+      </a>
+      <p class="caption">Meteorology & Manufacturing process lab</p>
+    </div>
+    <!-- Slide 12 -->
+    <div class="slide">
+      <a href="#">
+        <img src="img/12.jpeg" alt="freecad exam">
+      </a>
+      <p class="caption">Exam</p>
+    </div>
+    <!-- Add more slides as needed -->
+  </div>
+  <!-- Navigation controls -->
+  <div class="controls">
+    <button class="prev" onclick="prevSlide()">Previous</button>
+    <button class="next" onclick="nextSlide()">Next</button>
+  </div>
+</div>
+
   </main>
 
   <!-- Footer section -->
   <footer>
     <p>&copy; 2024 Your Website. All rights reserved.</p>
   </footer>
+
+  <script>
+  let currentIndex = 0;
+  const totalSlides = document.querySelectorAll('.slide').length;
+  const slideWidth = 33.33; // Width of each slide in percentage
+
+  function nextSlide() {
+    if (currentIndex < totalSlides - 3) {
+      currentIndex++;
+      updateSlider();
+    }
+  }
+
+  function prevSlide() {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateSlider();
+    }
+  }
+
+  function updateSlider() {
+    const translateValue = -currentIndex * slideWidth;
+    document.querySelector('.slider').style.transform = `translateX(${translateValue}%)`;
+  }
+</script>
+
 </body>
 </html>
