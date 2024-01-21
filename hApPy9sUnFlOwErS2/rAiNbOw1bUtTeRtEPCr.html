@@ -208,7 +208,7 @@
     
     
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Check if elements exist
     const slider = document.querySelector('.slider');
     const slides = document.querySelectorAll('.slide');
@@ -220,155 +220,153 @@
 
     // Add indicators
     slides.forEach((_, index) => {
-        const indicator = document.createElement('div');
-        indicator.classList.add('indicator');
-        indicator.addEventListener('click', () => goToSlide(index));
-        indicatorsContainer.appendChild(indicator);
+      const indicator = document.createElement('div');
+      indicator.classList.add('indicator');
+      indicator.addEventListener('click', () => goToSlide(index));
+      indicatorsContainer.appendChild(indicator);
     });
 
     const indicators = document.querySelectorAll('.indicator');
 
     function updateIndicators() {
-        indicators.forEach((indicator, index) => {
-            if (index === currentIndex) {
-                indicator.classList.add('active');
-            } else {
-                indicator.classList.remove('active');
-            }
-        });
+      indicators.forEach((indicator, index) => {
+        if (index === currentIndex) {
+          indicator.classList.add('active');
+        } else {
+          indicator.classList.remove('active');
+        }
+      });
     }
 
     function goToSlide(index) {
-        currentIndex = index;
-        const translateX = -currentIndex * 100 + '%';
-        slider.style.transform = `translateX(${translateX})`;
-        updateIndicators();
+      currentIndex = index;
+      const translateX = -currentIndex * 100 + '%';
+      slider.style.transform = `translateX(${translateX})`;
+      updateIndicators();
     }
 
     prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            goToSlide(currentIndex - 1);
-        }
+      if (currentIndex > 0) {
+        goToSlide(currentIndex - 1);
+      }
     });
 
     nextBtn.addEventListener('click', () => {
-        if (currentIndex < slides.length - 1) {
-            goToSlide(currentIndex + 1);
-        }
+      if (currentIndex < slides.length - 1) {
+        goToSlide(currentIndex + 1);
+      }
     });
 
     // Initialize the slider
     goToSlide(currentIndex);
 
+    // Function to check if the user is on a desktop device
+    function isDesktop() {
+      return window.innerWidth > 768; // Adjust the width based on your design
+    }
 
-
-          
-
-  // Function to check if the user is on a desktop device
-  function isDesktop() {
-    return window.innerWidth > 768; // Adjust the width based on your design
-  }
-
-  // Function to display the warning message
-  function displayDesktopWarning() {
-    var warningContainer = document.createElement('div');
-    warningContainer.id = 'desktop-warning';
-    warningContainer.innerHTML = '<p>⚠️ This page is best viewed on a mobile device. Please switch to a mobile device for optimal experience. ⚠️ @kashdip_mahapatra</p>';
-
-    // Append the warning container to the body
-    document.body.insertBefore(warningContainer, document.body.firstChild);
-
-    // Display a popup
-    var popupMessage = '❌ This page is best viewed on a mobile device. Please switch to a mobile device for optimal experience. ❌ @kashdip_mahapatra';
-    alert(popupMessage);
-  }
-
-  // Check if the user is on a desktop and display the warning if true
-  window.addEventListener('DOMContentLoaded', function () {
+    // Check if the user is on a desktop and apply backdrop blur with increased intensity if true
     if (isDesktop()) {
-      displayDesktopWarning();
+      document.body.style.filter = "blur(25px)"; // Increase the blur intensity by adjusting the value (e.g., 10px)
+      document.body.style.pointerEvents = "none"; // Disable pointer events on the body
+
+      // Enable pointer events on the Subscribe button
+      var subscribeButton = document.querySelector('.Action-button a');
+      if (subscribeButton) {
+        subscribeButton.style.pointerEvents = "auto";
+      }
+
+      // Display a custom popup message
+      var popupContainer = document.createElement('div');
+      popupContainer.id = 'desktop-warning';
+      popupContainer.innerHTML = '<p>⚠️ This page is best viewed on a mobile device. Please switch to a mobile device for optimal experience. ⚠️ @kashdip_mahapatra</p>';
+
+      // Append the popup container to the body
+      document.body.insertBefore(popupContainer, document.body.firstChild);
     }
   });
 
-    
-     
+  window.addEventListener('DOMContentLoaded', function () {
+    // Function to display the warning message on mobile devices
+    function displayMobileWarning() {
+      var warningContainer = document.createElement('div');
+      warningContainer.id = 'mobile-warning';
+      warningContainer.innerHTML = '<p>⚠️ This page is password-protected. Please switch to a desktop device and enter the correct password. ⚠️</p>';
 
+      // Append the warning container to the body
+      document.body.insertBefore(warningContainer, document.body.firstChild);
+    }
 
-// Glowing 🌟 effect for Subscribe button
-  // Function to add glowing effect to the subscribe button
+    // Check if the user is on a mobile device and display the warning if true
+    if (isMobile()) {
+      displayMobileWarning();
+    }
+  });
+
+  // Glowing 🌟 effect for Subscribe button
   function glowSubscribeButton() {
     const subscribeButton = document.querySelector('.bg-red-600');
 
-    // Add glowing effect by toggling the 'glow' class
     subscribeButton.classList.add('glow');
     setTimeout(() => {
       subscribeButton.classList.remove('glow');
     }, 2000);
   }
 
-  // Trigger the glowing effect every 10 seconds
   setInterval(glowSubscribeButton, 6000);
 
-//passward
-           function isMobile() {
-  return window.innerWidth <= 768;
-}
-
-window.addEventListener('DOMContentLoaded', function() {
-  if (isMobile()) {
-    // Blur the page
-    document.body.style.filter = "blur(25px)";
-    document.body.style.pointerEvents = "none";
-
-    // Generate password based on the current date
-    var currentDate = new Date();
-    var passwordDay = currentDate.getDate();
-    var password = "akashdip100" + passwordDay + "slider1";
-
-    // Ask for password
-    var enteredPassword = prompt("✔️ Please enter the password: Slider1 pg");
-
-    // Check password
-    if (enteredPassword !== password) {
-      // Redirect to 404.html on wrong password
-      window.location.href = "404.html";
-    } else {
-      // Remove blur and pointer events on correct password
-      document.body.style.filter = "";
-      document.body.style.pointerEvents = "";
-    }
+  // Password protection for mobile devices
+  function isMobile() {
+    return window.innerWidth <= 768;
   }
-});
-        
-    // Extra Security 🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕
-     // Function to check if the user is on a desktop device
-        function isDesktop() {
-            return window.innerWidth > 768; // Adjust the width based on your design
-        }
 
-        // Check if the user is on a desktop and apply backdrop blur with increased intensity if true
-        window.addEventListener('DOMContentLoaded', function () {
-            if (isDesktop()) {
-                document.body.style.filter = "blur(25px)"; // Increase the blur intensity by adjusting the value (e.g., 10px)
-                document.body.style.pointerEvents = "none"; // Disable pointer events on the body
+  window.addEventListener('DOMContentLoaded', function () {
+    if (isMobile()) {
+      document.body.style.filter = "blur(25px)";
+      document.body.style.pointerEvents = "none";
 
-                // Enable pointer events on the Subscribe button
-                var subscribeButton = document.querySelector('.Action-button a');
-                if (subscribeButton) {
-                    subscribeButton.style.pointerEvents = "auto";
-                }
-            }
-        });
+      var currentDate = new Date();
+      var passwordDay = currentDate.getDate();
+      var password = "akashdip100" + passwordDay + "slider1";
 
+      var enteredPassword = prompt("✔️ Please enter the password: Slider1 pg");
 
-        window.onload = function() {
-            if (window.innerWidth <= 768) { // Adjust the width as needed
-                setTimeout(function() {
-                    alert('class বা lab এ কোনো ভাবেই যেন আমার নাম না ওঠে তোদের মুখে 🥴, যদি by chance sir জিগেস করে Akashdip কে কীকোরে চিনলি 🤔, বলবি দাদারা বলেছে ... ভালো freecad করে, যা হোক একটা বানিয়ে বলে দিস 🤫\n\n class में कभी भी मेरा नाम मत लेना 🤫, अगर sir पूछे कि कैसे पहचानते हो 🤔 - बोल देना कि senior ने बोला था 🙏');
-                }, 5000); // 5000 milliseconds = 5 seconds
-            }
-        };
+      if (enteredPassword !== password) {
+        window.location.href = "404.html";
+      } else {
+        document.body.style.filter = "";
+        document.body.style.pointerEvents = "";
+      }
+    }
+  });
+
+  // Extra Security 🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕
+  function isDesktop() {
+    return window.innerWidth > 768; // Adjust the width based on your design
+  }
+
+  window.addEventListener('DOMContentLoaded', function () {
+    if (isDesktop()) {
+      document.body.style.filter = "blur(25px)";
+      document.body.style.pointerEvents = "none";
+
+      var subscribeButton = document.querySelector('.Action-button a');
+      if (subscribeButton) {
+        subscribeButton.style.pointerEvents = "auto";
+      }
+    }
+  });
+
+  window.onload = function () {
+    if (window.innerWidth <= 768) {
+      setTimeout(function () {
+        // Remove the alert message and add your own custom message here
+        // alert('class বা lab এ কোনো ভাবেই যেন আমার নাম না ওঠে তোদের মুখে 🥴, যদি by chance sir জিগেস করে Akashdip কে কীকোরে চিনলি 🤔, বলবি দাদারা বলেছে ... ভালো freecad করে, যা হোক একটা বানিয়ে বলে দিস 🤫\n\n class में कभी भी मेरा नाम मत लेना 🤫, अगर sir पूछे कि कैसे पहचानते हो 🤔 - बोल देना कि senior ने बोला था 🙏');
+      }, 5000);
+    }
+  };
 </script>
+
 
 
 </body>
