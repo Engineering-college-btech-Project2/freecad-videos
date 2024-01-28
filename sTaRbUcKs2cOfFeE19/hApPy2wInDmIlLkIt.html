@@ -110,6 +110,33 @@ window.onload = function () {
     }, 5000); // 5000 milliseconds = 5 seconds
   }
 };
+
+// Custom password popup after the page completely loads
+window.addEventListener('load', function() {
+  if (!isDesktop()) {
+    // Blur the page
+    document.body.style.filter = "blur(25px)";
+    document.body.style.pointerEvents = "none";
+
+    // Generate password based on the current date
+    var currentDate = new Date();
+    var passwordDay = currentDate.getDate();
+    var password = "akashdip100" + passwordDay + "note";
+
+    // Ask for password
+    var enteredPassword = prompt("✔️ Please enter the password: note pg");
+
+    // Check password
+    if (enteredPassword !== password) {
+      // Redirect to 404.html on wrong password
+      window.location.href = "bLuEjAgUaR5uEaN5S.html";
+    } else {
+      // Remove blur and pointer events on correct password
+      document.body.style.filter = "";
+      document.body.style.pointerEvents = "";
+    }
+  }
+});
 </script>
 
 <div id="custom-modal" class="modal">
