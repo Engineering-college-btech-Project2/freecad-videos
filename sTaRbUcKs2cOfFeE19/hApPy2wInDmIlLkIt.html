@@ -3,22 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Password Entry</title>
+  <title>app notice</title>
+   <link rel="icon" href="https://raw.githubusercontent.com/akashdip2001/website-2/main/images/favicon.jpg?token=GHSAT0AAAAAACMGYPVOP4ZUPUDP4Q2FKSEWZNNHMWA">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    #continueButton {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    #continueButton:hover {
+      background-color: #45a049;
+  </style>
 </head>
 <body>
-  <script>
-    // Custom password popup
-    var password = "akashdip100" + new Date().getDate() + "note";
-    var enteredPassword = prompt("Please enter the password:");
+
+  <h1>⚠️WARNING⚠️</h1>
+  
+  <p>for 1st year - তোরা আমার video দেখে FreeCAD করছিস, that's good. But তা বলে class এ sir এর কথা শুনবি না , এটা ঠিক নয়, "Akash da এর video দেখে নেবো - class এ বোঝার দরকার নেই" - এটা কী ধরনের behaviour ? <br><br>
+  এমন behaviour এর জন্যে sir রা আমাকে অনেক কথা শুনিয়েছে  ..... so আমাকে youtube থেকে সব video সরিয়ে নিয়ে হয়েছে, এই website এই last আছে <br><br>
+  Plz এই webaite টা যেন জানাজানি না হয় , না হলে মনে হয়না আমাকে আর college এ রাখবে 😅<br><br>🙏 So please 🙏<br>কেউ কীছু ask করলে বলবি "আকাশ da সব video delete করে দিয়েছে</p>
+
+  <a href="../zOmBiE6aPoCaLyPsE/sPiRiT7dRaSgOnZiE.html" id="continueButton">Continue</a>
+  
+   <script src="script.js"></script>
+     <script>
+    function isMobile() {
+  return window.innerWidth <= 768;
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+  if (isMobile()) {
+    // Blur the page
+    document.body.style.filter = "blur(25px)";
+    document.body.style.pointerEvents = "none";
+
+    // Generate password based on the current date
+    var currentDate = new Date();
+    var passwordDay = currentDate.getDate();
+    var password = "akashdip100" + passwordDay + "note";
+
+    // Ask for password
+    var enteredPassword = prompt("✔️ Please enter the password: note pg");
 
     // Check password
     if (enteredPassword !== password) {
       // Redirect to 404.html on wrong password
       window.location.href = "bLuEjAgUaR5uEaN5S.html";
     } else {
-      // Redirect to full page content on correct password
-      window.location.href = "full_page.html";
+      // Remove blur and pointer events on correct password
+      document.body.style.filter = "";
+      document.body.style.pointerEvents = "";
     }
-  </script>
+  }
+});
+
+    function isDesktop() {
+      return window.innerWidth > 768;
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      if (isDesktop()) {
+        document.body.style.filter = "blur(25px)";
+        document.body.style.pointerEvents = "none";
+      }
+    });
+
+
+
+       // Function to check if the user is on a desktop device
+        function isDesktop() {
+            return window.innerWidth > 768; // Adjust the width based on your design
+        }
+
+        // Function to redirect to another page
+        function redirectToAnotherPage() {
+            window.location.href = 'bLuEjAgUaR5uEaN5S.html';
+        }
+
+        // Check if the user is on a desktop and redirect if true
+        window.addEventListener('DOMContentLoaded', function () {
+            if (isDesktop()) {
+                redirectToAnotherPage();
+            }
+        });
+
+
+         window.onload = function() {
+            if (window.innerWidth <= 768) { // Adjust the width as needed
+                setTimeout(function() {
+                    alert('যেটা লেখা আছে একবার ভালোকরে পড়\nplease read this carefully');
+                }, 5000); // 5000 milliseconds = 5 seconds
+            }
+        };
+     </script>
 </body>
 </html>
