@@ -115,48 +115,49 @@
 <!-- Password Popup -->
 <div class="password-popup">
   <h2>This page is only for Akashdip Mahapatra</h2>
-  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    <input type="password" name="password" placeholder="Enter Password">
+  <form id="passwordForm" method="post">
+    <input type="password" id="passwordInput" name="password" placeholder="Enter Password">
     <br>
     <input type="submit" value="Submit">
   </form>
 </div>
 
 <script>
-  // Function to check if the user is on a desktop device
-  function isDesktop() {
-    return window.innerWidth > 768; // Adjust the width based on your design
+  // Function to toggle blur effect and block touches
+  function toggleBlurEffectAndTouchBlocking(enable) {
+    const body = document.body;
+    if (enable) {
+      body.style.filter = "blur(5px)";
+      body.style.pointerEvents = "none";
+    } else {
+      body.style.filter = "";
+      body.style.pointerEvents = "";
+    }
   }
 
-  // Function to toggle blur effect
-  function toggleBlurEffect() {
-    document.body.style.filter = document.body.style.filter === "blur(5px)" ? "" : "blur(5px)";
-  }
-
-  // Check if the user is on a desktop and toggle blur effect if true
-  window.addEventListener('DOMContentLoaded', function () {
-    if (isDesktop()) {
-      toggleBlurEffect();
+  // Function to handle form submission
+  document.getElementById("passwordForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const password = document.getElementById("passwordInput").value;
+    if (password === "kali2001") {
+      // Password correct, show popup and remove blur effect
+      document.getElementById("custom-modal").style.display = "block";
+      toggleBlurEffectAndTouchBlocking(false);
+    } else {
+      // Incorrect password or empty, redirect to 404.html
+      window.location.href = "404.html";
     }
   });
-
-  // Popup message for when the page loads
-  window.onload = function () {
-    if (window.innerWidth <= 768) { // Adjust the width as needed
-      // Display the custom modal after 5 seconds
-      setTimeout(function () {
-        document.getElementById('custom-modal').style.display = 'block';
-      }, 5000); // 5000 milliseconds = 5 seconds
-    }
-  };
 </script>
 
+<!-- Popup message for when the page loads -->
 <div id="custom-modal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('custom-modal').style.display = 'none';">&times;</span>
+    <span class="close" onclick="document.getElementById('custom-modal').style.display = 'none'; toggleBlurEffectAndTouchBlocking(false);">&times;</span>
     <p>যেটা লেখা আছে একবার ভালোকরে পড়</p>
     <p>please read this carefully</p>
   </div>
 </div>
+
 </body>
 </html>
