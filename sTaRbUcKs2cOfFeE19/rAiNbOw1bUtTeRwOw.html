@@ -9,6 +9,63 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
   <link rel="icon" href="https://raw.githubusercontent.com/akashdip2001/website-2/main/images/favicon.jpg?token=GHSAT0AAAAAACMGYPVOP4ZUPUDP4Q2FKSEWZNNHMWA">
 
+  <style>
+    /* Action buttons */
+    .Action-button {
+      margin-top: 5%;
+    }
+
+    @media (max-width: 768px) {
+      .Action-button {
+        margin-top: 27%;
+      }
+    }
+
+    .video-card1 {
+      background: #5A5A5A;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      padding: 3px;
+    }
+
+    /* Glowing effect */
+    .Action-button a.glow,
+    nav a.glow {
+      position: relative;
+      display: inline-block;
+      text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
+      z-index: 1;
+    }
+
+    .Action-button a.glow {
+      animation: glowAnimation 2s infinite;
+      box-shadow: 0 0 10px #FFD700;
+    }
+
+    @keyframes glowAnimation {
+      0%, 100% {
+        box-shadow: 0 0 10px #FFD700;
+      }
+      50% {
+        box-shadow: 0 0 20px #FFD700;
+      }
+    }
+
+    /* Popup modal styles */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
 <body class="bg-gray-800 text-white">
 
@@ -28,64 +85,18 @@
     </div>
   </div>
   <!-- Action buttons -->
- <div class="Action-button" >
-  <div>
-    <!-- Make the "Join" button clickable -->
-    <a href="https://www.youtube.com/channel/UCxvmp634YDc41xCWOdvWqoQ?sub_confirmation=1" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-      subscribe
-    </a>
-    <!-- <button class="ml-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
-      Customize channel
-    </button> -->
+  <div class="Action-button">
+    <div>
+      <!-- Make the "Join" button clickable -->
+      <a href="https://www.youtube.com/channel/UCxvmp634YDc41xCWOdvWqoQ?sub_confirmation=1" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+        subscribe
+      </a>
+      <!-- <button class="ml-2 bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded">
+        Customize channel
+      </button> -->
+    </div>
   </div>
- </div>
 </div>
-
-  <style>
-    /* Action buttons */
-  .Action-button {
-    margin-top: 5%;
-  }
-
-  @media (max-width: 768px) {
-    .Action-button {
-      margin-top: 27%;
-    }
-  }
-
-     .video-card1 {
-    background: #5A5A5A;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    padding: 3px;
-     }
-
-     
-   /* Glowing effect */
-  
-.Action-button a.glow,
-nav a.glow {
-  position: relative;
-  display: inline-block;
-  text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 20px #FFD700;
-  z-index: 1;
-}
-
-.Action-button a.glow {
-  animation: glowAnimation 2s infinite;
-  box-shadow: 0 0 10px #FFD700;
-}
-
-@keyframes glowAnimation {
-  0%, 100% {
-    box-shadow: 0 0 10px #FFD700;
-  }
-  50% {
-    box-shadow: 0 0 20px #FFD700;
-  }
-}
-
-  </style>
 
 <!-- Navigation menu -->
 <nav class="flex justify-around bg-gray-900 p-2">
@@ -116,131 +127,26 @@ nav a.glow {
   <!-- Repeat sections for each category with relevant headings and cards -->
 </main>
 
+<section id="videos">
+  <h2> Play list</h2>
 
-   <section id="videos">
-        <h2> Play list</h2>
-     
-        <div class="video-card1">
-            <iframe src="https://www.youtube.com/embed/6d8VCqbf-pc" frameborder="0" allowfullscreen></iframe>
-          <a class="u-link" href="#" target="_blank">&nbspset up Min-GW </a>
-        </div>
-        <div class="video-card1">
-            <iframe src="https://www.youtube.com/embed/UGZmDw5sY2w" frameborder="0" allowfullscreen></iframe>
-          <a class="u-link" href="#" target="_blank">&nbspCMD </a>
-        </div>
-        <div class="video-card1">
-            <iframe src="https://www.youtube.com/embed/28ddgcVzOTw" frameborder="0" allowfullscreen></iframe>
-          <a class="u-link" href="#" target="_blank">&nbspWeb Computing </a>
-        </div>
-        <div class="video-card1">
-            <iframe src="https://www.youtube.com/embed/py_eK8z48g8" frameborder="0" allowfullscreen></iframe>
-          <a class="u-link" href="#" target="_blank">&nbspcreat your own local server </a>
-        </div>
-        <div class="video-card1">
-            <iframe src="https://www.youtube.com/embed/G0vi2nZp75o" frameborder="0" allowfullscreen></iframe>
-             <a class="u-link" href="https://youtube.com/playlist?list=PL_RecMEcs_p_CmMnwnokj_6s4UeK8YtPo&si=KY52975CgI5s8Mde" target="_blank">&nbspAll Videos</a>
-        </div>
-        <div class="video-card1">
-            <iframe src="https://www.youtube.com/embed/JHugCa7PBYM" frameborder="0" allowfullscreen></iframe>
-          <a class="u-link" href="#" target="_blank">&nbspiOT </a>
-        </div>
+  <div class="video-card1">
+    <iframe src="https://www.youtube.com/embed/6d8VCqbf-pc" frameborder="0" allowfullscreen></iframe>
+    <a class="u-link" href="#" target="_blank">&nbspset up Min-GW </a>
+  </div>
+  <!-- Repeat for more video cards -->
 
-  
-   <!-- Styles for the image slider -->
-        
-        <div class="slider-container">
-            <div class="slider">
-                <div class="slide">
-                    <a href="https://youtu.be/py_eK8z48g8">
-                        <img src="img/2-01.jpeg" alt="Create Your Own Server with ngrok and vscode">
-                    </a>
-                    <div class="caption">Create Your Own Server</div>
-                    
-                </div>
-                <div class="slide">
-                    <a href="https://youtu.be/uk5VGfzw8IU">
-                        <img src="img/1-01.jpeg" alt="wifi hacking in kali linux">
-                    </a>
-                    <div class="caption">Wifi Hacking in Kali Linux</div>
-                </div>
-                <div class="slide">
-                    <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p-5UwLqFBFtat90L8IOc1bZ">
-                        <img src="img/3-01.jpeg" alt="wifi rc car">
-                    </a>
-                    <div class="caption">DIY Wifi RC Car</div>
-                </div>
-                <div class="slide">
-                    <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p__J3GSHkKfLjC08q0NmWtR">
-                        <img src="img/4-01.jpeg" alt="IC Engine in SolidWorks">
-                    </a>
-                    <div class="caption">IC Engine in SolidWorks</div>
-                </div>
-                <div class="slide">
-                    <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p-rR-kDstljCglAQ4li-RGZ">
-                        <img src="img/5-01.jpeg" alt="SolidWorks PlayList">
-                    </a>
-                    <div class="caption">SolidWorks PlayList</div>
-                </div>
-                <div class="slide">
-                    <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p90o-aY6pJXUS7FnzC2sVrk">
-                        <img src="img/6-01.jpeg" alt="Stairs in SolidWorks">
-                    </a>
-                    <div class="caption">Stairs in SolidWorks</div>
-                </div>
-                <div class="slide">
-                    <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p9D9Mw3hr-uLOXioiFdPDGd">
-                        <img src="img/7-01.jpeg" alt="autocad 2d playlist">
-                    </a>
-                    <div class="caption">AutoCAD 2D</div>
-                </div>
-                <div class="slide">
-                    <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p9NEuljRr7hNsFiPASnJYQt">
-                        <img src="img/8-01.jpeg" alt="autocad 3d playlist">
-                    </a>
-                    <div class="caption">AutoCAD 3D</div>
-                </div>
-                <div class="slide">
-                  <a href="404.html">
-                   <!-- <a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p89vs0ebvBF4J_SIdtJUzA4">-->
-                        <img src="img/9-01.jpeg" alt="Manufacturing lab">
-                    </a>
-                    <div class="caption">Manufacturing lab</div>
-                </div>
-                <div class="slide">
-                  <a href="404.html">
-                    <!--<a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p9xLRg67-zZTFQg9-t0aMiv">-->
-                        <img src="img/10-01.jpeg" alt="Machine Drawing And Design">
-                    </a>
-                    <div class="caption">Machine Drawing And Design</div>
-                </div>
-                <div class="slide">
-                  <a href="404.html">
-                    <!--<a href="https://www.youtube.com/playlist?list=PL_RecMEcs_p-EuVk0-JudqSREmGBtP2TF">-->
-                        <img src="img/11-01.jpeg" alt="Meteorology & Manuf... process lab">
-                    </a>
-                    <div class="caption">Meteorology & Manufacturing process lab</div>
-                </div>
-                 <div class="slide">
-                    <!-- <a href="freecad_exam.html"> -->
-                    <a href="404.html">
-                        <img src="img/12.jpeg" alt="Meteorology & Manufacturing process lab">
-                    </a>
-                    <div class="caption">Exam</div>
-                </div>
-            </div>
-            <div class="indicators"></div>
-            <div class="controls">
-                <button class="prev">Previous</button>
-                <button class="next">Next</button>
-            </div>
-        </div>  
-    </section>
-  
-  
-   <footer>
-        <p>&copy; 2023 My YouTube Channel</p>
-    
-    <section class="u-backlink u-clearfix u-grey-80">
+  <!-- Popup modal for custom message -->
+  <div id="popup-message" class="popup">
+    <p>Hi, I am Akashdip Mahapatra. I love Physics. From Mechanical Engineering, 3rd year © 2024.</p>
+    <p>যদি এই browser বার বার 404 error দেখায় - try another browser from play-store like Brave.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2023 My YouTube Channel</p>
+
+  <section class="u-backlink u-clearfix u-grey-80">
     <a class="u-link" href="https://www.youtube.com/channel/UCxvmp634YDc41xCWOdvWqoQ" target="_blank">
       <span>YouTube</span>
     </a>
@@ -250,68 +156,46 @@ nav a.glow {
     <a class="u-link" href="https://akashdip2001.github.io/linktree/" target="_blank">
       <span>contact me </span>
     </a>
-    </section>
-    </footer>
- <script src="script.js"></script>
-  
+  </section>
+</footer>
+
 <script>
-// Function to check if the user is on a desktop device
-function isDesktop() {
+  // Function to check if the user is on a desktop device
+  function isDesktop() {
     return window.innerWidth > 768; // Adjust the width based on your design
-}
+  }
 
-// Function to redirect to another page
-function redirectToAnotherPage() {
-    window.location.href = '404.html';
-}
-
-// Check if the user is on a desktop and redirect if true
-window.addEventListener('DOMContentLoaded', function () {
-    if (isDesktop()) {
-        redirectToAnotherPage();
-    }
-});
-
-// Function to disable right-click context menu
-function disableRightClick(event) {
+  // Function to disable right-click context menu
+  function disableRightClick(event) {
     event.preventDefault();
-}
+  }
 
-// Attach the disableRightClick function to the contextmenu event
-window.addEventListener('contextmenu', disableRightClick);
+  // Attach the disableRightClick function to the contextmenu event
+  window.addEventListener('contextmenu', disableRightClick);
 
-// popup message for - when open
-window.onload = function () {
+  // Popup message after 5 seconds
+  window.onload = function () {
     if (window.innerWidth <= 768) { // Adjust the width as needed
-        setTimeout(function () {
-            alert('Hi\nI am Akashdip Mahapatra\nI love Physics\nFrom Mechanical Engineering\n3rd year © 2024\n\nযদি এই browser বার বার 404 error দেখায় - try another browser from play-store like Brave');
-        }, 5000); // 5000 milliseconds = 5 seconds
+      setTimeout(function () {
+        document.getElementById('popup-message').style.display = 'block';
+      }, 5000); // 5000 milliseconds = 5 seconds
     }
-};
+  };
 
+  // Extra Security 🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕
+  // Check if the user is on a desktop and apply backdrop blur with increased intensity if true
+  window.addEventListener('DOMContentLoaded', function () {
+    if (isDesktop()) {
+      document.body.style.filter = "blur(25px)"; // Increase the blur intensity by adjusting the value (e.g., 10px)
+      document.body.style.pointerEvents = "none"; // Disable pointer events on the body
 
-   // Extra Security 🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕🦕
-     // Function to check if the user is on a desktop device
-        function isDesktop() {
-            return window.innerWidth > 768; // Adjust the width based on your design
-        }
-
-        // Check if the user is on a desktop and apply backdrop blur with increased intensity if true
-        window.addEventListener('DOMContentLoaded', function () {
-            if (isDesktop()) {
-                document.body.style.filter = "blur(25px)"; // Increase the blur intensity by adjusting the value (e.g., 10px)
-                document.body.style.pointerEvents = "none"; // Disable pointer events on the body
-
-                // Enable pointer events on the Subscribe button
-                var subscribeButton = document.querySelector('.Action-button a');
-                if (subscribeButton) {
-                    subscribeButton.style.pointerEvents = "auto";
-                }
-            }
-        });
-
+      // Enable pointer events on the Subscribe button
+      var subscribeButton = document.querySelector('.Action-button a');
+      if (subscribeButton) {
+        subscribeButton.style.pointerEvents = "auto";
+      }
+    }
+  });
 </script>
-  
-  
 </body>
 </html>
