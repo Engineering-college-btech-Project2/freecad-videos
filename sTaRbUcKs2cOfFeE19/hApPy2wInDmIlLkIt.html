@@ -11,6 +11,7 @@
       font-family: Arial, sans-serif;
       text-align: center;
       margin: 50px;
+      filter: blur(5px); /* Initial blur effect */
     }
 
     h1 {
@@ -127,15 +128,15 @@
     return window.innerWidth > 768; // Adjust the width based on your design
   }
 
-  // Function to redirect to another page
-  function redirectToAnotherPage() {
-    window.location.href = 'bLuEjAgUaR5uEaN5S.html';
+  // Function to toggle blur effect
+  function toggleBlurEffect() {
+    document.body.style.filter = document.body.style.filter === "blur(5px)" ? "" : "blur(5px)";
   }
 
-  // Check if the user is on a desktop and redirect if true
+  // Check if the user is on a desktop and toggle blur effect if true
   window.addEventListener('DOMContentLoaded', function () {
     if (isDesktop()) {
-      redirectToAnotherPage();
+      toggleBlurEffect();
     }
   });
 
