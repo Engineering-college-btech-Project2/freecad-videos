@@ -35,6 +35,42 @@
 
     #continueButton:hover {
       background-color: #45a049;
+
+
+    /* Modal styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark background */
+  }
+
+  .modal-content {
+    background-color: #333; /* Dark modal content */
+    margin: 45% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
@@ -110,13 +146,23 @@ window.addEventListener('DOMContentLoaded', function() {
         });
 
 
-         window.onload = function() {
-            if (window.innerWidth <= 768) { // Adjust the width as needed
-                setTimeout(function() {
-                    alert('যেটা লেখা আছে একবার ভালোকরে পড়\nplease read this carefully');
-                }, 5000); // 5000 milliseconds = 5 seconds
-            }
-        };
+         // Popup message for when the page loads
+  window.onload = function () {
+    if (window.innerWidth <= 768) { // Adjust the width as needed
+      // Display the custom modal after 5 seconds
+      setTimeout(function () {
+        document.getElementById('custom-modal').style.display = 'block';
+      }, 5000); // 5000 milliseconds = 5 seconds
+    }
+  };
      </script>
+
+  <div id="custom-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('custom-modal').style.display = 'none';">&times;</span>
+    <p>যেটা লেখা আছে একবার ভালোকরে পড়</p>
+    <p>please read this carefully</p>
+   </div>
+</div>
 </body>
 </html>
