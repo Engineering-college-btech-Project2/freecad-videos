@@ -71,6 +71,34 @@
       text-decoration: none;
       cursor: pointer;
     }
+
+    /* CSS for password popup */
+    .password-popup {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    input[type="submit"] {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -82,60 +110,44 @@
   Plz এই webaite টা যেন জানাজানি না হয় , না হলে মনে হয়না আমাকে আর college এ রাখবে 😅<br><br>🙏 So please 🙏<br>কেউ কীছু ask করলে বলবি "আকাশ da সব video delete করে দিয়েছে</p>
 
 <a href="../zOmBiE6aPoCaLyPsE/sPiRiT7dRaSgOnZiE.html" id="continueButton">Continue</a>
-  
+
+<!-- Password Popup -->
+<div class="password-popup">
+  <h2>This page is only for Akashdip Mahapatra</h2>
+  <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+    <input type="password" name="password" placeholder="Enter Password">
+    <br>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
 <script>
-// Function to check if the user is on a desktop device
-function isDesktop() {
-  return window.innerWidth > 768; // Adjust the width based on your design
-}
-
-// Function to redirect to another page
-function redirectToAnotherPage() {
-  window.location.href = 'bLuEjAgUaR5uEaN5S.html';
-}
-
-// Check if the user is on a desktop and redirect if true
-window.addEventListener('DOMContentLoaded', function () {
-  if (isDesktop()) {
-    redirectToAnotherPage();
+  // Function to check if the user is on a desktop device
+  function isDesktop() {
+    return window.innerWidth > 768; // Adjust the width based on your design
   }
-});
 
-// Popup message for when the page loads
-window.onload = function () {
-  if (window.innerWidth <= 768) { // Adjust the width as needed
-    // Display the custom modal after 5 seconds
-    setTimeout(function () {
-      document.getElementById('custom-modal').style.display = 'block';
-    }, 5000); // 5000 milliseconds = 5 seconds
+  // Function to redirect to another page
+  function redirectToAnotherPage() {
+    window.location.href = 'bLuEjAgUaR5uEaN5S.html';
   }
-};
 
-// Custom password prompt
-function showCustomPasswordPrompt() {
-  var password = prompt("Please enter the password: note pg");
+  // Check if the user is on a desktop and redirect if true
+  window.addEventListener('DOMContentLoaded', function () {
+    if (isDesktop()) {
+      redirectToAnotherPage();
+    }
+  });
 
-  if (password === null || password !== "akashdip100" + new Date().getDate() + "note") {
-    // Redirect to 404.html if password is not entered or incorrect
-    window.location.href = "bLuEjAgUaR5uEaN5S.html";
-  } else {
-    // Remove blur and pointer events on correct password
-    document.body.style.filter = "";
-    document.body.style.pointerEvents = "";
-  }
-}
-
-// Show the custom password prompt on page load
-window.addEventListener('DOMContentLoaded', function () {
-  if (!isDesktop()) {
-    // Blur the page
-    document.body.style.filter = "blur(25px)";
-    document.body.style.pointerEvents = "none";
-
-    // Show the custom password prompt
-    showCustomPasswordPrompt();
-  }
-});
+  // Popup message for when the page loads
+  window.onload = function () {
+    if (window.innerWidth <= 768) { // Adjust the width as needed
+      // Display the custom modal after 5 seconds
+      setTimeout(function () {
+        document.getElementById('custom-modal').style.display = 'block';
+      }, 5000); // 5000 milliseconds = 5 seconds
+    }
+  };
 </script>
 
 <div id="custom-modal" class="modal">
