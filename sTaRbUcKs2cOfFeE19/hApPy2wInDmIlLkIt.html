@@ -104,40 +104,47 @@ window.addEventListener('DOMContentLoaded', function () {
 // Popup message for when the page loads
 window.onload = function () {
   if (window.innerWidth <= 768) { // Adjust the width as needed
-    // Display the custom modal after 5 seconds
+    // Display the password modal after 5 seconds
     setTimeout(function () {
-      document.getElementById('custom-modal').style.display = 'block';
+      document.getElementById('password-modal').style.display = 'block';
     }, 5000); // 5000 milliseconds = 5 seconds
   }
 };
 
-// Custom password popup after the page completely loads
-window.addEventListener('load', function() {
-  if (!isDesktop()) {
-    // Blur the page
-    document.body.style.filter = "blur(25px)";
-    document.body.style.pointerEvents = "none";
+// Function to check if the entered password is correct
+function checkPassword() {
+  // Get the entered password
+  var enteredPassword = document.getElementById('passwordInput').value;
 
-    // Generate password based on the current date
-    var currentDate = new Date();
-    var passwordDay = currentDate.getDate();
-    var password = "akashdip100" + passwordDay + "note";
+  // Correct password based on the current date
+  var currentDate = new Date();
+  var passwordDay = currentDate.getDate();
+  var password = "akashdip100" + passwordDay + "note";
 
-    // Ask for password
-    var enteredPassword = prompt("✔️ Please enter the password: note pg");
+  // Check if the entered password is correct
+  if (enteredPassword === password) {
+    // Close the password modal
+    document.getElementById('password-modal').style.display = 'none';
 
-    // Check password
-    if (enteredPassword !== password) {
-      // Redirect to 404.html on wrong password
-      window.location.href = "bLuEjAgUaR5uEaN5S.html";
-    } else {
-      // Remove blur and pointer events on correct password
-      document.body.style.filter = "";
-      document.body.style.pointerEvents = "";
-    }
+    // Display the custom message modal after 5 seconds
+    setTimeout(function () {
+      document.getElementById('custom-modal').style.display = 'block';
+    }, 5000); // 5000 milliseconds = 5 seconds
+  } else {
+    // Alert for incorrect password
+    alert('Incorrect password! Please try again.');
   }
-});
+}
 </script>
+
+<div id="password-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="document.getElementById('password-modal').style.display = 'none';">&times;</span>
+    <p>Please enter the password:</p>
+    <input type="password" id="passwordInput">
+    <button onclick="checkPassword()">Submit</button>
+  </div>
+</div>
 
 <div id="custom-modal" class="modal">
   <div class="modal-content">
@@ -146,5 +153,6 @@ window.addEventListener('load', function() {
     <p>please read this carefully</p>
   </div>
 </div>
+
 </body>
 </html>
