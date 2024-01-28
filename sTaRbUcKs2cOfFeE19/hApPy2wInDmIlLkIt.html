@@ -83,6 +83,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      filter: none; /* Remove blur effect */
     }
 
     input[type="password"] {
@@ -123,26 +124,13 @@
 </div>
 
 <script>
-  // Function to toggle blur effect and block touches
-  function toggleBlurEffectAndTouchBlocking(enable) {
-    const body = document.body;
-    if (enable) {
-      body.style.filter = "blur(5px)";
-      body.style.pointerEvents = "none";
-    } else {
-      body.style.filter = "";
-      body.style.pointerEvents = "";
-    }
-  }
-
   // Function to handle form submission
   document.getElementById("passwordForm").addEventListener("submit", function(event) {
     event.preventDefault();
     const password = document.getElementById("passwordInput").value;
     if (password === "kali2001") {
-      // Password correct, show popup and remove blur effect
+      // Password correct, show popup
       document.getElementById("custom-modal").style.display = "block";
-      toggleBlurEffectAndTouchBlocking(false);
     } else {
       // Incorrect password or empty, redirect to 404.html
       window.location.href = "404.html";
@@ -153,7 +141,7 @@
 <!-- Popup message for when the page loads -->
 <div id="custom-modal" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="document.getElementById('custom-modal').style.display = 'none'; toggleBlurEffectAndTouchBlocking(false);">&times;</span>
+    <span class="close" onclick="document.getElementById('custom-modal').style.display = 'none';">&times;</span>
     <p>যেটা লেখা আছে একবার ভালোকরে পড়</p>
     <p>please read this carefully</p>
   </div>
