@@ -13,15 +13,6 @@
       margin: 50px;
     }
 
-    h1 {
-      color: #333;
-    }
-
-    p {
-      color: #555;
-      margin-bottom: 20px;
-    }
-
     #continueButton {
   display: inline-block;
   padding: 10px 20px;
@@ -49,8 +40,9 @@
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   transition: border-color 0.3s, color 0.3s, text-shadow 0.3s;
+  z-index: 1; /* Set a lower z-index for the logout button */
 }
 
 .logout-button:hover {
@@ -58,6 +50,18 @@
   color: #f0f0f0; /* Lighter white color on hover */
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Enhanced shadow effect on hover */
 }
+
+h1 {
+  color: #333;
+  position: relative; /* Ensure proper z-index stacking */
+  z-index: 2; /* Set a higher z-index for the h1 element */
+}
+
+p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
   </style>
 </head>
 <body>
