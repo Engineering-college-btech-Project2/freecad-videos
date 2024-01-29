@@ -35,9 +35,34 @@
 
     #continueButton:hover {
       background-color: #45a049;
+
+      /* Log Out button */
+    .login-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  color: black; /* Changed text color to black */
+  border: 2px solid black; /* Changed border color to black */
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s, color 0.3s, text-shadow 0.3s;
+}
+
+
+    .login-button:hover {
+      border-color: white; /* White border on hover */
+      color: #f0f0f0; /* Lighter white color on hover */
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Enhanced shadow effect on hover */
+    }
   </style>
 </head>
 <body>
+
+   <a href="http://freecadapp2.000.pe/login.php" class="login-button">Log Out</a>
 
   <h1>⚠️WARNING⚠️</h1>
   
